@@ -61,7 +61,8 @@ public class SimpleCalculator {
 //		else {
 //			System.out.println("Enter the correct choice");
 //		}
-		
+		boolean ans=true;
+		while(ans) {
 	switch (key) {
 	case 0: {
 		System.out.println("Addition");
@@ -113,20 +114,25 @@ public class SimpleCalculator {
 		System.out.println(Total);
 		break;	
 	}
+	case 5:{
+		ans=false;
+		System.out.println("Thankyou");
+		break;
 		
-		
+	}	
 	
 	default:
 		System.out.println("Enter the correct choice");
 	}
 	
 		}
-	
-	
-	
-	
-	
 	}
+}
+	
+	
+	
+	
+	
 	
 	
 	
