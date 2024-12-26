@@ -1,47 +1,46 @@
-package day12;
+package day21;
 
 public class Book {
 	private String title;
 	private String author;
+	private int copies;
 	private double price;
-	private int numberOfCopies;
-	Book(){
-		
+	public Book() {
 	}
-	Book(String title,String author,double price,int numberOfCopies){
-		this.title=title;
-		this.author=author;
-		this.price=price;
-		this.numberOfCopies=numberOfCopies;
+	public Book(String title, String author, int copies, double price) {
+		this.title = title;
+		this.author = author;
+		this.copies = copies;
+		this.price = price;
 	}
 	public String getTitle() {
 		return title;
 	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
 	public String getAuthor() {
 		return author;
+	}
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+	public int getCopies() {
+		return copies;
+	}
+	public void setCopies(int copies) {
+		this.copies = copies;
 	}
 	public double getPrice() {
 		return price;
 	}
-	public int getNumberOfCopies() {
-		return numberOfCopies;
-	}
-	public void setTitle(String title) {
-		this.title=title;
-	}
-	public void setAuthor(String author) {
-		this.author=author;
-	}
 	public void setPrice(double price) {
-		this.price=price;
+		this.price = price;
 	}
-	
-	public void setNumberOfCopies(int numberOfCopies) {
-		this.numberOfCopies=numberOfCopies;
-	}
+	@Override
 	public String toString() {
-		return "Title  = "+title+"\nAuthor = "+author+"\nPrice  = "+price+"\nCopies = "+numberOfCopies;
+		return "Title :" + title + "\nAuthor :" + author + "\nCopies :" + copies + "\nPrice :" + price ;
 	}
 	
-
+	
 }
