@@ -1,12 +1,11 @@
 package day21;
-
-import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.TreeSet;
 
 public class BookInterface {
 	public static void main(String[] args) {
 		Book book=new Book();
-		ArrayList<Book> al=new ArrayList<Book>();
+		TreeSet<Book> al=new TreeSet<Book>();
 		Scanner scan=new Scanner(System.in);
 		boolean work=true;
 		while(work) {
@@ -30,7 +29,8 @@ public class BookInterface {
 			int copies=scan.nextInt();
 			System.out.println("Enter Book price");
 			double price=scan.nextDouble();
-			al.add(book=new Book(id,title, author, copies, price));
+			book=new Book(id,title, author, copies, price);
+			al.add(book);
 		}
 		else if(key==2) {
 			System.out.println("Enter the Book ID");
@@ -62,6 +62,7 @@ public class BookInterface {
 			
 		}
 		else if(key==3) {
+		
 			System.out.println(al);
 		}
 		else if(key==4) {
@@ -71,7 +72,7 @@ public class BookInterface {
 				if(id==book1.getId()) {
 					al.remove(book1);
 					System.out.println("Book Removed successfully");
-					break;
+					break;	
 					}
 				}
 				

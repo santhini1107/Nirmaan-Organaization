@@ -1,17 +1,28 @@
 package day21;
 
-public class Book {
+import java.util.Objects;
+
+public class Book implements Comparable<Book> {
+	private int id;
 	private String title;
 	private String author;
 	private int copies;
 	private double price;
 	public Book() {
 	}
-	public Book(String title, String author, int copies, double price) {
+	public Book(int id,String title, String author, int copies, double price) {
+		this.id=id;
 		this.title = title;
 		this.author = author;
 		this.copies = copies;
 		this.price = price;
+	}
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 	public String getTitle() {
 		return title;
@@ -39,8 +50,30 @@ public class Book {
 	}
 	@Override
 	public String toString() {
-		return "Title :" + title + "\nAuthor :" + author + "\nCopies :" + copies + "\nPrice :" + price ;
+		return "Book [id=" + id + ", title=" + title + ", author=" + author + ", copies=" + copies + ", price=" + price
+				+ "]";
+	}
+	@Override
+	public int hashCode() {
+		return Objects.hash(id);
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Book other = (Book) obj;
+		return id == other.id;
+	}
+	@Override
+	public int compareTo(Book  other) {
+		// TODO Auto-generated method stub
+		return Integer.compare(this.id,other.getId());
 	}
 	
+}	
 	
-}
+
