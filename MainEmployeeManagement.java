@@ -1,12 +1,16 @@
-package day14;
+package day23;
 
 import java.util.Scanner;
+import java.util.TreeSet;
+
+import day21.Book;
 
 public class MainEmployeeManagement {
 	EmployeeManagement emp;
 	public static void main(String[] args) {
 	Scanner scan=new Scanner(System.in);	
 	EmployeeManagement emp=new EmployeeManagement();
+	TreeSet<EmployeeManagement> al=new TreeSet<EmployeeManagement>();
 	boolean isTrue=true;
 	while(isTrue) {
 	System.out.println("Enter your choice");
@@ -29,6 +33,7 @@ public class MainEmployeeManagement {
 			System.out.println("Enter Employee Moblie No");
 			long mobile=scan.nextLong();
 			emp=new EmployeeManagement(empName, empId, empDept, mobile);
+			al.add(emp);
 			break;
 		}
 		case 2: {

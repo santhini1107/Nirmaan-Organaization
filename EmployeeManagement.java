@@ -1,6 +1,10 @@
-package day14;
+package day23;
 
-public class EmployeeManagement {
+import java.util.Objects;
+
+import day21.Book;
+
+public class EmployeeManagement implements Comparable<EmployeeManagement>{
 	private String EmpName;
 	private int EmpId;
 	private String EmpDept;
@@ -44,5 +48,26 @@ public class EmployeeManagement {
 		return "EmpName = " + EmpName + "\nEmpId   = " + EmpId + "\nEmpDept = " + EmpDept + "\nMobile  = "
 				+ Mobile ;
 	}
+	@Override
+	public int hashCode() {
+		return Objects.hash(EmpId);
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		EmployeeManagement other = (EmployeeManagement) obj;
+		return EmpId == other.EmpId;
+	}
+	@Override
+	public int compareTo(EmployeeManagement other) {
+		// TODO Auto-generated method stub
+		return  Integer.compare(this.EmpId, other.getEmpId());
+	}
+	
 	
 }
