@@ -44,9 +44,11 @@ public class EmployeeManagement implements Comparable<EmployeeManagement>{
 		Mobile = mobile;
 	}
 
+	
+	@Override
 	public String toString() {
-		return "EmpName = " + EmpName + "\nEmpId   = " + EmpId + "\nEmpDept = " + EmpDept + "\nMobile  = "
-				+ Mobile ;
+		return "EmpName=" + EmpName + ", EmpId=" + EmpId + ", EmpDept=" + EmpDept + ", Mobile="
+				+ Mobile;
 	}
 	@Override
 	public int hashCode() {
@@ -66,8 +68,10 @@ public class EmployeeManagement implements Comparable<EmployeeManagement>{
 	@Override
 	public int compareTo(EmployeeManagement other) {
 		// TODO Auto-generated method stub
-		return  Integer.compare(this.EmpId, other.getEmpId());
+		return Integer.compare(this.EmpId, other.getEmpId());
 	}
+	
+	
 	
 	
 }
